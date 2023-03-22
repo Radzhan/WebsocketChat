@@ -15,7 +15,7 @@ const Sidebar = () => {
     }, [UsersGet]);
 
     const createCard = AllUsers.map((element) => {
-        return <div key={element._id}>
+        return <div key={element._id} style={{margin: '10px'}}>
             <b>{element.displayName}</b>
         </div>
     })

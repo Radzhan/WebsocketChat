@@ -16,7 +16,6 @@ export const register = createAsyncThunk<User,
 	RegisterMutation,
 	{ rejectValue: ValidationError }>("users/register", async (registerMutation, {rejectWithValue}) => {
 	try {
-		console.log(registerMutation)
 		const response = await axiosApi.post<RegisterResponse>(
 			"/users",
 			registerMutation
