@@ -36,12 +36,12 @@ const Login = () => {
 	const submitFormHandler = async (event: React.FormEvent) => {
 		event.preventDefault();
 		await dispatch(login(state)).unwrap();
-		navigate("/");
+		navigate("/chat");
 	};
 
 	const googleLoginHandler = async (credentials: string) => {
 		await dispatch(googleLogin(credentials)).unwrap();
-		navigate("/");
+		navigate("/chat");
 	};
 
 	return (

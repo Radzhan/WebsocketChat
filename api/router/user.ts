@@ -127,19 +127,13 @@ userRouter.delete("/sessions", async (req, res, next) => {
   try {
     const token = req.get("Authorization");
     const success = { message: "OK" };
+	console.log(token)
 
     if (!token) {
       return res.send(success);
     }
 
-    const user = await User.findOne({ token });
-
-    if (!user) {
-      return res.send(success);
-    }
-
-    user.generateToken();
-    await user.save();
+    await User.deleteOne({ token });
     return res.send(success);
   } catch (e) {
     return next(e);

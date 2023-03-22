@@ -53,7 +53,7 @@ const Register = () => {
 
 	const googleLoginHandler = async (credentials: string) => {
 		await dispatch(googleLogin(credentials)).unwrap();
-		navigate("/");
+		navigate("/chat");
 	};
 
 	return (

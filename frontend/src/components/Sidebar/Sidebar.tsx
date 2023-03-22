@@ -21,7 +21,7 @@ const Sidebar = () => {
     })
 
     return (
-        <div>
+        <div style={{border: '1px solid black', marginRight: '15px'}}>
             {createCard}
         </div>
     );

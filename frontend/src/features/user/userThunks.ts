@@ -64,8 +64,10 @@ export const googleLogin = createAsyncThunk<User,
 
 export const logout = createAsyncThunk<void, void, { state: RootState }>(
 	"users/logout",
-	async (_, {dispatch}) => {
-		await axiosApi.delete("/users/sessions", {});
+	async (_, {dispatch, getState}) => {
+		const token = getState().users.user?.token;
+
+		await axiosApi.delete("/users/sessions", {headers: {'Authorization': token}});
 		dispatch(unsetUser());
 	}
 );

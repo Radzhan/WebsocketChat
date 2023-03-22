@@ -20,7 +20,7 @@ export const getUsers = createAsyncThunk<User[]>('chat/users', async () => {
 
 export const getPosts = createAsyncThunk<Post[]>('chat/posts', async () => {
   const response = await axiosApi.get('/posts');
-
+  
   return response.data;
 });
 
